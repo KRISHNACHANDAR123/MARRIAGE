@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Join us in celebrating the wedding of Bhuvaneśh R and Priyadharshini G S on February 22, 2026" />
+  <meta name="keywords" content="wedding, invitation, Bhuvaneśh, Priyadharshini, marriage, celebration" />
+  <title>Bhuvaneśh & Priyadharshini - Wedding Invitation</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <link rel="stylesheet" href="/src/styles/animations.css" />
+</head>
+
+<body>
+  <!-- 3D Canvas Background -->
+  <canvas id="wedding-canvas"></canvas>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="invitation-header fade-in">
+          <p class="pre-title">You Are Invited</p>
+          <h1 class="main-title">For The Wedding Of</h1>
+        </div>
+
+        <div class="couple-initials-container" id="initials-container">
+          <div class="floral-wreath">
+            <svg viewBox="0 0 200 200" class="wreath-svg">
+              <circle cx="100" cy="100" r="80" fill="none" stroke="url(#wreath-gradient)" stroke-width="2"
+                stroke-dasharray="5,5" opacity="0.3" />
+              <defs>
+                <linearGradient id="wreath-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#8b9d88;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#c9a961;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#f4c2d6;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="couple-initials" id="3d-initials">
+            <span class="initial-letter">B</span>
+            <span class="initial-letter">P</span>
+          </div>
+        </div>
+
+        <div class="couple-names fade-in-up">
+          <h2 class="bride-groom-name">Bhuvaneśh R</h2>
+          <div class="ampersand-divider">
+            <span class="decorative-line"></span>
+            <span class="ampersand">&</span>
+            <span class="decorative-line"></span>
+          </div>
+          <h2 class="bride-groom-name">Priyadharshini G S</h2>
+        </div>
+
+        <div class="wedding-date fade-in-up" data-delay="200">
+          <div class="date-content">
+            <p class="month">February</p>
+            <p class="day">Sunday 22</p>
+            <p class="year">2026</p>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="scroll-arrow"></div>
+          <p>Scroll to explore</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ceremony Details Section -->
+    <section id="ceremony" class="details-section ceremony-section">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <div class="decorative-element"></div>
+          <h2 class="section-title">Wedding Ceremony</h2>
+          <div class="decorative-element"></div>
+        </div>
+
+        <div class="details-card glass-card reveal-on-scroll" data-delay="100">
+          <div class="card-icon">💒</div>
+          <div class="detail-item">
+            <h3 class="detail-label">Date & Time</h3>
+            <p class="detail-value">Sunday, February 22, 2026</p>
+            <p class="detail-value highlight">7:30 AM</p>
+          </div>
+
+          <div class="detail-item">
+            <h3 class="detail-label">Venue</h3>
+            <p class="detail-value">Maruvoor Murugan Thirumana Mandapam</p>
+            <p class="detail-value">Melmaruvathur, 603319</p>
+          </div>
+
+          <a href="https://maps.google.com/?q=Maruvoor+Murugan+Thirumana+Mandapam+Melmaruvathur" target="_blank"
+            class="map-button">
+            <span>📍</span> Get Directions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reception Details Section -->
+    <section id="reception" class="details-section reception-section">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <div class="decorative-element"></div>
+          <h2 class="section-title">Reception</h2>
+          <div class="decorative-element"></div>
+        </div>
+
+        <div class="details-card glass-card reveal-on-scroll" data-delay="100">
+          <div class="card-icon">🎉</div>
+          <div class="detail-item">
+            <h3 class="detail-label">Date & Time</h3>
+            <p class="detail-value">Friday, February 21, 2026</p>
+            <p class="detail-value highlight">6:00 PM Onwards</p>
+          </div>
+
+          <div class="detail-item">
+            <h3 class="detail-label">Venue</h3>
+            <p class="detail-value">Maruvoor Murugan Thirumana Mandapam</p>
+            <p class="detail-value">Melmaruvathur, 603319</p>
+          </div>
+
+          <div class="celebration-note">
+            <p>✨ Join us for an evening of celebration, dinner, and joy ✨</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+      <div class="section-container">
+        <div class="section-header reveal-on-scroll">
+          <div class="decorative-element"></div>
+          <h2 class="section-title">RSVP</h2>
+          <div class="decorative-element"></div>
+        </div>
+
+        <div class="rsvp-card glass-card reveal-on-scroll" data-delay="100">
+          <p class="rsvp-intro">We would be honored by your presence</p>
+
+          <form id="rsvp-form" class="rsvp-form">
+            <div class="form-group">
+              <input type="text" id="guest-name" placeholder="Your Name" required />
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="guest-email" placeholder="Email Address" required />
+            </div>
+
+            <div class="form-group">
+              <input type="tel" id="guest-phone" placeholder="Phone Number" />
+            </div>
+
+            <div class="form-group radio-group">
+              <p class="radio-label">Will you be attending?</p>
+              <div class="radio-options">
+                <label class="radio-option">
+                  <input type="radio" name="attendance" value="yes" required />
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">Joyfully Accept</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="attendance" value="no" />
+                  <span class="radio-custom"></span>
+                  <span class="radio-text">Regretfully Decline</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <input type="number" id="guest-count" placeholder="Number of Guests" min="1" max="10" />
+            </div>
+
+            <div class="form-group">
+              <textarea id="guest-message" placeholder="Leave a message for the couple (optional)" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">
+              <span class="button-text">Send Response</span>
+              <span class="button-glow"></span>
+            </button>
+          </form>
+
+          <div id="rsvp-success" class="rsvp-success" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Thank You!</h3>
+            <p>We've received your response and look forward to celebrating with you!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-hearts">
+          <span class="heart">❤</span>
+        </div>
+        <p class="footer-text">With love and gratitude</p>
+        <p class="footer-names">Bhuvaneśh & Priyadharshini</p>
+        <p class="footer-date">February 22, 2026</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

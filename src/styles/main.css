@@ -1,0 +1,741 @@
+/* ================================================
+   PREMIUM WEDDING WEBSITE - MAIN STYLES
+   Glassmorphism | 3D Depth | Romantic Aesthetics
+   ================================================ */
+
+:root {
+    /* === Color Palette === */
+    --sage-green: #8b9d88;
+    --sage-light: #a8bda5;
+    --sage-dark: #6b7c68;
+    --soft-pink: #f4c2d6;
+    --pale-pink: #fce8f0;
+    --blush: #ffd7e8;
+    --gold: #c9a961;
+    --gold-light: #dcc184;
+    --cream: #faf8f5;
+    --white: #ffffff;
+    --charcoal: #2a2a2a;
+    --charcoal-light: #4a4a4a;
+
+    /* === Gradients === */
+    --gradient-primary: linear-gradient(135deg, var(--sage-green) 0%, var(--sage-dark) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--soft-pink) 0%, var(--blush) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    --gradient-bg: linear-gradient(180deg, var(--cream) 0%, var(--pale-pink) 50%, #f0e6dc 100%);
+
+    /* === Spacing === */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+
+    /* === Typography === */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-script: 'Great Vibes', cursive;
+
+    /* === Shadows === */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+
+    /* === Glass Effect === */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-blur: blur(20px);
+}
+
+/* === Reset & Base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--gradient-bg);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* === 3D Canvas Background === */
+#wedding-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    /* Keep 3D scene in background */
+    pointer-events: none;
+    /* Allow clicking through canvas */
+    opacity: 0.95;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================================
+   HERO SECTION
+   ================================================ */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.invitation-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.pre-title {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.8;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+}
+
+/* === Couple Initials with 3D Effect === */
+.couple-initials-container {
+    position: relative;
+    margin: var(--spacing-2xl) auto;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floral-wreath {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: gentle-rotate 30s infinite linear;
+}
+
+.wreath-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 20px rgba(139, 157, 136, 0.4));
+}
+
+.couple-initials {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.initial-letter {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 600;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 10px 30px rgba(139, 157, 136, 0.3);
+    position: relative;
+    animation: float-letter 3s ease-in-out infinite alternate;
+}
+
+.initial-letter:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.initial-letter:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+/* === Couple Names === */
+.couple-names {
+    margin: var(--spacing-xl) 0;
+}
+
+.bride-groom-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 500;
+    color: var(--sage-green);
+    margin: var(--spacing-md) 0;
+    letter-spacing: 0.05em;
+}
+
+.ampersand-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.decorative-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+.ampersand {
+    font-family: var(--font-script);
+    font-size: 3rem;
+    color: var(--gold);
+    animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* === Wedding Date === */
+.wedding-date {
+    margin: var(--spacing-2xl) auto;
+}
+
+.date-content {
+    display: inline-block;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--glass-border);
+}
+
+.month,
+.year {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal-light);
+}
+
+.day {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--sage-green);
+    margin: var(--spacing-xs) 0;
+}
+
+/* === Scroll Indicator === */
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--spacing-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--sage-green);
+    border-radius: 25px;
+    margin: 0 auto var(--spacing-sm);
+    position: relative;
+}
+
+.scroll-arrow::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--sage-green);
+    border-radius: 50%;
+    animation: scroll-dot 2s infinite;
+}
+
+.scroll-indicator p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--charcoal-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ================================================
+   DETAILS SECTIONS
+   ================================================ */
+
+.details-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-md);
+    position: relative;
+}
+
+.section-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.decorative-element {
+    width: 60px;
+    height: 2px;
+    background: var(--gradient-accent);
+    border-radius: 2px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+}
+
+/* === Glass Cards === */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 30px;
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-accent);
+    opacity: 0.6;
+}
+
+.card-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.detail-item {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.detail-label {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--sage-green);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.05em;
+}
+
+.detail-value {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--charcoal);
+    line-height: 1.8;
+}
+
+.detail-value.highlight {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin-top: var(--spacing-xs);
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--gradient-primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-lg);
+}
+
+.map-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.celebration-note {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(201, 169, 97, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(201, 169, 97, 0.2);
+}
+
+.celebration-note p {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold);
+}
+
+/* ================================================
+   RSVP SECTION
+   ================================================ */
+
+.rsvp-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.rsvp-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rsvp-intro {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--charcoal);
+    margin-bottom: var(--spacing-xl);
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: var(--spacing-md);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--charcoal);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(139, 157, 136, 0.3);
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--sage-green);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 4px rgba(139, 157, 136, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-label {
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: var(--spacing-sm);
+}
+
+.radio-options {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 180px;
+}
+
+.radio-option:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.radio-option input[type="radio"] {
+    display: none;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--sage-green);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked+.radio-custom {
+    background: var(--sage-green);
+    box-shadow: 0 0 0 4px rgba(139, 157, 136, 0.2);
+}
+
+.radio-option input[type="radio"]:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+.radio-text {
+    font-weight: 400;
+    color: var(--charcoal);
+}
+
+.submit-button {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: var(--spacing-md);
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.submit-button:active {
+    transform: translateY(-1px);
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.button-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-button:hover .button-glow {
+    left: 100%;
+}
+
+/* === RSVP Success Message === */
+.rsvp-success {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-accent);
+    color: var(--white);
+    font-size: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    animation: success-pop 0.5s ease-out;
+}
+
+.rsvp-success h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--sage-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.rsvp-success p {
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+
+.footer {
+    padding: var(--spacing-3xl) var(--spacing-md);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: var(--glass-blur);
+}
+
+.footer-hearts {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    animation: heartbeat 1.5s infinite ease-in-out;
+}
+
+.footer-text {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--charcoal-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-names {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--sage-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-date {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--charcoal-light);
+    letter-spacing: 0.1em;
+}
+
+/* ================================================
+   RESPONSIVE DESIGN
+   ================================================ */
+
+@media (max-width: 768px) {
+
+    .hero-section,
+    .details-section,
+    .rsvp-section {
+        padding: var(--spacing-xl) var(--spacing-md);
+        min-height: auto;
+    }
+
+    .couple-initials-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .initial-letter {
+        font-size: 4rem;
+    }
+
+    .glass-card {
+        padding: var(--spacing-xl);
+    }
+
+    .radio-option {
+        min-width: 100%;
+    }
+
+    .section-header {
+        flex-direction: column;
+    }
+
+    .decorative-element {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-initials-container {
+        width: 160px;
+        height: 160px;
+    }
+
+    .initial-letter {
+        font-size: 3rem;
+    }
+
+    .card-icon {
+        font-size: 3rem;
+    }
+}
